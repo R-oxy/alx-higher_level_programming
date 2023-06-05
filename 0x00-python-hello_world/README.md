@@ -1,0 +1,3 @@
+0x00. Python - Hello, World
+
+In this project, I embarked on my Python journey by familiarizing myself with the interpreter, printing text and variables, and mastering string indexing and slicing. My first milestone was to write the classic "Hello, World" program in Python. This simple yet significant step helped me understand the basics of executing Python code and displaying output. As I progressed, I delved into more advanced concepts, such as working with variables and manipulating strings using indexing and slicing techniques. This project served as an excellent foundation for my Python programming skills and opened up a world of possibilities for future projects.
