@@ -4,8 +4,8 @@
 
 
 class Rectangle:
-    """declare private width and height attributes for Rectangle class"""
-    
+    """Declare private instance attributes width and height for class Rectangle"""
+
     def __init__(self, width=0, height=0):
         self.width = width
         self.height = height
@@ -37,3 +37,11 @@ class Rectangle:
         if value < 0:
             raise ValueError("height must be >= 0")
         self.__height = value
+
+    def area(self):
+        """Calculate and return the area of the rectangle."""
+        return self.__width * self.__height
+
+    def perimeter(self):
+        """Calculate and return the perimeter of the rectangle."""
+        return 2 * (self.__width + self.__height) if self.__width != 0 and self.__height != 0 else 0
