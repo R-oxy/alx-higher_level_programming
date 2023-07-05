@@ -1,0 +1,75 @@
+=======================
+``text_indentation`` module
+=======================
+
+Usage of ``text_indentation``:
+prints text with 2 new lines after ``.``, ``?``, ``:``
+-------------------
+
+Import:
+    >>> text_indentation = __import__('5-text_indentation').text_indentation
+
+Print a paragraph:
+    >>> text_indentation("""Lorem ipsum dolor sit amet, consectetur adipiscing elit. \
+    ... Wie geht es dir? Welche Sprache spreche ich? Ist es Deutsch oder etwas anderes? \
+    ... Nicht so: also auch nicht das. Vielleicht ist es das Beste, aber wo ist das: \
+    ... Immer mehr Freude? Ich verstehe, sagte er, dass er nichts Schmerzhaftes fühlt. \
+    ... Übertragen Sie dasselbe auf Bescheidenheit oder Mäßigung, die die Kontrolle der \
+    ... Begierden der Vernunft gehorcht. Wenn du das sagst, haben wir gewonnen. \
+    ... Dann haben wir in sechs Stadien in vielfältiger Weise mit Dipylos gesprochen. \
+    ... Wenn du etwas anderes willst, dann später. Diese geistige Neigung, die jedem \
+    ... sein eigenes gibt und die ich erwähne. Wenn sie nur sagen würden, dass jemand \
+    ... glücklicher ist als der andere! Jetzt würdest du Ruinen sehen.""")
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+    <BLANKLINE>
+    Wie geht es dir?
+    <BLANKLINE>
+    Welche Sprache spreche ich? Ist es Deutsch oder etwas anderes?
+    <BLANKLINE>
+    Nicht so:
+    <BLANKLINE>
+    also auch nicht das.
+    <BLANKLINE>
+    Vielleicht ist es das Beste, aber wo ist das:
+    <BLANKLINE>
+    Immer mehr Freude?
+    <BLANKLINE>
+    Ich verstehe, sagte er, dass er nichts Schmerzhaftes fühlt.
+    <BLANKLINE>
+    Übertragen Sie dasselbe auf Bescheidenheit oder Mäßigung, die die Kontrolle der Begierden der Vernunft gehorcht.
+    <BLANKLINE>
+    Wenn du das sagst, haben wir gewonnen.
+    <BLANKLINE>
+    Dann haben wir in sechs Stadien in vielfältiger Weise mit Dipylos gesprochen.
+    <BLANKLINE>
+    Wenn du etwas anderes willst, dann später.
+    <BLANKLINE>
+    Diese geistige Neigung, die jedem sein eigenes gibt und die ich erwähne.
+    <BLANKLINE>
+    Wenn sie nur sagen würden, dass jemand glücklicher ist als der andere! Jetzt würdest du Ruinen sehen.
+    <BLANKLINE>
+
+Print an integer:
+    >>> text_indentation(69)
+    Traceback (most recent call last):
+    	            ...
+    TypeError: text must be a string
+
+Print text that has no ., ?, or ::
+    >>> text_indentation("Alx SE")
+    Alx SE
+
+Print text that has . but no space after:
+    >>> text_indentation("Alx.SE")
+    Alx.
+    <BLANKLINE>
+    SE
+
+Missing one argument:
+    >>> text_indentation(None)
+    Traceback (most recent call last):
+    TypeError: text must be a string
+
+    >>> text_indentation()
+    Traceback (most recent call last):
+    TypeError: text must be a string

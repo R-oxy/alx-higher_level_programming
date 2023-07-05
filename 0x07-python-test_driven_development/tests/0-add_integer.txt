@@ -34,7 +34,7 @@ Note that floats are cast to ints before addition is performed.
 ::
 
     >>> add_integer(-2.5, -0.5)
-    -3
+    -2
 
 Floating and non-floating point values can be combined.
 
