@@ -1,0 +1,51 @@
+=======================
+`matrix_mul` module
+=======================
+
+Usage of `matrix_mul`:
+- two variables `m_a` and `m_b`
+- `m_a` and `m_b` must be lists of lists of integers or floats
+- The matrices must satisfy the requirements specified in the function's documentation
+
+-------------------
+
+Import:
+    >>> matrix_mul = __import__('100-matrix_mul').matrix_mul
+
+Multiply 2x2 matrices:
+    >>> matrix_mul([[1, 2], [3, 4]], [[5, 6], [7, 8]])
+    [[19, 22], [43, 50]]
+
+Multiply 2x3 and 3x2 matrices:
+    >>> matrix_mul([[1, 2, 3], [4, 5, 6]], [[7, 8], [9, 10], [11, 12]])
+    [[58, 64], [139, 154]]
+
+Multiply matrices with a non-integer/float element:
+    >>> matrix_mul([[1, 2], [3, 'four']], [[5, 6], [7, 8]])
+    Traceback (most recent call last):
+                    ...
+    TypeError: m_a should contain only integers or floats or m_b should contain only integers or floats
+
+Multiply matrices with rows of different sizes:
+    >>> matrix_mul([[1, 2], [3, 4, 5]], [[5, 6], [7, 8]])
+    Traceback (most recent call last):
+                    ...
+    TypeError: each row of m_a must be of the same size or each row of m_b must be of the same size
+
+Multiply incompatible matrices:
+    >>> matrix_mul([[1, 2], [3, 4]], [[5, 6], [7, 8], [9, 10]])
+    Traceback (most recent call last):
+                    ...
+    ValueError: m_a and m_b can't be multiplied
+
+Multiply an empty matrix:
+    >>> matrix_mul([], [[1, 2], [3, 4]])
+    Traceback (most recent call last):
+                    ...
+    ValueError: m_a can't be empty or m_b can't be empty
+
+Pass no arguments:
+    >>> matrix_mul()
+    Traceback (most recent call last):
+                    ...
+    TypeError: matrix_mul() missing 2 required positional arguments: 'm_a' and 'm_b'
