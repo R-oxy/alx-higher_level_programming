@@ -75,8 +75,12 @@ class Base:
             if list_objs is None:
                 writer.writerows([])
             else:
-                rows = [obj.to_dictionary() for obj in list_objs]
-                writer.writerows(rows)
+                for obj in list_objs:
+                    if cls.__name__ == "Rectangle":
+                        row = [obj.id, obj.width, obj.height, obj.x, obj.y]
+                    elif cls.__name__ == "Square":
+                        row = [obj.id, obj.size, obj.x, obj.y]
+                    writer.writerow(row)
 
     @classmethod
     def load_from_file_csv(cls):
@@ -87,17 +91,15 @@ class Base:
         try:
             with open(filename, "r") as file:
                 reader = csv.reader(file)
-                rows = list(reader)
-                if cls.__name__ == "Rectangle":
-                    keys = ["id", "width", "height", "x", "y"]
-                elif cls.__name__ == "Square":
-                    keys = ["id", "size", "x", "y"]
-                data = []
-                for row in rows:
-                    values = [int(val) for val in row]
-                    instance_data = dict(zip(keys, values))
-                    data.append(instance_data)
-                instances = [cls.create(**obj) for obj in data]
+                instances = []
+                for row in reader:
+                    if cls.__name__ == "Rectangle":
+                        id, width, height, x, y = map(int, row)
+                        instance = cls(width, height, x, y, id)
+                    elif cls.__name__ == "Square":
+                        id, size, x, y = map(int, row)
+                        instance = cls(size, x, y, id)
+                    instances.append(instance)
                 return instances
         except FileNotFoundError:
             return []
