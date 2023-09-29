@@ -15,7 +15,8 @@ if __name__ == "__main__":
     else:
         repo_name = sys.argv[1]
         owner_name = sys.argv[2]
-        url = "https://api.github.com/repos/{}/{}/commits".format(owner_name, repo_name)
+        url = "https://api.github.com/repos/{}/{}/commits".format(
+            owner_name, repo_name)
 
         try:
             r = requests.get(url)
