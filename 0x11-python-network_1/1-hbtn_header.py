@@ -4,7 +4,7 @@ Fetches the value of the X-Request-Id header
 from a given URL's HTTP response.
 """
 
-import urllib.request
+import urllib
 import sys
 
 
