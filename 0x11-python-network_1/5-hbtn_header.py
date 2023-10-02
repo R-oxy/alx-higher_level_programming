@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 """
-Fetches the value of the X-Request-Id variable
-from the response header of a given URL.
+Fetches the value of the X-Request-Id
 """
 
 import requests
