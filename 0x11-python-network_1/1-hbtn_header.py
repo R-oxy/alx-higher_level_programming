@@ -5,11 +5,11 @@ from a given URL's HTTP response.
 """
 
 from urllib import request
-import sys
+from sys import argv
 
 
 if __name__ == "__main__":
-    url = sys.argv[1]
+    url = argv[1]
     req = request.Request(url)
     with request.urlopen(req) as response:
         x_req_id = response.getheader('X-Request-Id')
