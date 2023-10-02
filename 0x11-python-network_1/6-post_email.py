@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """
-Sends a POST request to the given URL with the email as a parameter and displays the response.
+Sends a POST request to the given URL with the email as a parameter
+and displays the response
 """
 
 import requests
