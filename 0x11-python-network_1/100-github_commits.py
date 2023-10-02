@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """
-Fetches and prints the 10 most recent commits
-from a GitHub repository.
+Fetches and prints the 10 most recent
+commits from a GitHub repository.
 """
 
 import requests
